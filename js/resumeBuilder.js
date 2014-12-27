@@ -1,98 +1,92 @@
-///$("#main").append("Narayanan Aier");
-
-/*var awesomeThoughts = "I am Narayanan and I am AWESOME";
-console.log(awesomeThoughts);
-
-var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-$("#main").append(funThoughts);
-*/
-
-var name = "Narayanan Aier";
-var role = "Web Developer";
-
 var bio = {
-	"name" : name,
-	"role" : role,
-	"contact" : {
-		"email" : "web.dev@gmail.com",
-		"mobile" : "940-197-1887",
-		"location" : "Orange County, CA"
-	},
-	"bioPic" : "images/me.jpg",
-	"welcomeMessage" : "Welcome to Narayanan's Resume Page",
-	"skills" : ["HTML", "CSS", "JavaScript"]
-};
-
-var work = {
-	"currentPosition" : "Student",
-	"currentEmployer" : "Self",
-	"yearsWorked" : "5 years",
-	"workCity" : "Brea, CA"
-};
-
-var education = {};
-
-education["schoolName"] = "XYZ University";
-education["yearsAttended"] = "2008 - 2009";
-education["schoolCity"] = "Brea, CA";
-
-var educationJSON = {
-	"schools": [
+	"name" : "Narayanan Aier",
+	"role" : "Web Developer",
+	"contacts" : [
 	{
-		"name" : "Master's Universiy",
-		"city" : "Master's City",
-		"degree" : "Masters",
-		"major" : "Electrical Engineeering",
-		"yearGraduated" : "2009"
+		"mobile" : "123-123-1234",
+		"email" : "webdev@nanodegree.com",
+		"github" : "naier",
+		"location" : "Orange County, CA"
+	}
+	],
+	"welcomeMessage" : "lorem ipsum dolor sit amet etc etc etc.",
+	"skills" : ["HTML", "CSS", "JavaScript"],
+	"biopic" : "images/me.jpg"
+}
+
+var education = {
+	"schools" : [
+	{
+		"name" : "Master's University",
+		"location" : "Master's City",
+		"degree" : "Master's",
+		"majors" : ["Electrical Engineering"],
+		"dates" : 2009,
+		"url" : "http://www.google.com"
 	},
 	{
 		"name" : "Bachelor's University",
-		"city" : "Bachelor's City",
-		"degree" : "Bachelors",
-		"major" : "Electrical Engineeering",
-		"yearGraduated" : "2008"
+		"location" : "Bachelor's City",
+		"degree" : "Bachelor's",
+		"majors" : ["Electrical Engineering"],
+		"dates" : 2008,
+		"url" : "http://www.google.com"
 	}
 	],
-	"onlineCourses": [
+	"onlineCourses" : [
 	{
 		"title" : "JavaScript Basics",
 		"school" : "Udacity",
-		"date" : "2014"
+		"date" : 2014,
+		"url" : "https://www.udacity.com/course/ud804"
 	},
 	{
-		"title" : "Introduction to HTML and CSS",
+		"title" : "How to Use Git and GitHub",
 		"school" : "Udacity",
-		"date" : "2014"
+		"date" : 2014,
+		"url" : "https://www.udacity.com/course/ud775"
+	},
+	{
+		"title" : "Intro to HTML and CSS",
+		"school" : "Udacity",
+		"date" : 2014,
+		"url" : "https://www.udacity.com/course/ud304"
 	}
 	]
 }
 
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
+var work = {
+	"job" : [
+	{
+		"employer" : "Employer ABC",
+		"title" : "Senior Web Developer",
+		"location" : "Orange County, CA",
+		"dates" : "Mar 2012  - Present",
+		"description" : "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI."
+	},
+	{
+		"employer" : "Employer XYZ",
+		"title" : "Web Developer",
+		"location" : "Orange County, CA",
+		"dates" : "Aug 2009 - Feb 2012",
+		"description" : "Ut sibi fuerat socius sagittis. Ego intervenerit. Vere quia a te nuper iratus occidit illos undecim annorum puer. Deinde, si hoc forte qui fuit imperavit. "
+	}
+	]
+}
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-
-var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedSkills = HTMLskillsStart + HTMLskills.replace("%data%", bio.skills);
-
-var formattedWorkPosition = HTMLworkTitle.replace("%data%", work["currentPosition"]);
-var formattedSchoolName = HTMLschoolName.replace("%data%", education.schoolName);
-
-$("#header").prepend(formattedSkills);
-$("#header").prepend(formattedWelcomeMessage);
-$("#header").prepend(formattedLocation);
-$("#header").prepend(formattedEmail);
-$("#header").prepend(formattedMobile);
-$("#header").prepend(formattedBioPic);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-$("#workExperience").append(HTMLworkStart);
-$("#workExperience").append(formattedWorkPosition);
-
-$("#education").append(HTMLschoolStart);
-$("#education").append(formattedSchoolName);
+var projects = {
+	"projects" : [
+	{
+		"title" : "Project 1",
+		"dates" : "Nov 2014 - Dec 2014",
+		"description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+		"images" : ["images/project1-img1.jpg", "images/project1-img2.jpg"]
+	},
+	{
+		"title" : "Project 2",
+		"dates" : "Jan 2014 - Jun 2014",
+		"description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. ",
+		"images" : ["images/project2-img1.jpg", "images/project2-img2.jpg"]
+	}
+	]
+}
