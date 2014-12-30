@@ -1,19 +1,21 @@
 var bio = {
     "name": "Narayanan Aier",
     "role": "Web Developer",
-    "contacts": [
+    "contacts": 
         {
             "mobile": "123-123-1234",
             "email": "webdev@nanodegree.com",
             "github": "naier",
             "location": "Orange County, CA"
         }
-    ],
+    ,
     "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc.",
     "skills": [
         "HTML",
         "CSS",
-        "JavaScript"
+        "JavaScript",
+        "Technology Consulting",
+        "Project Management"
     ],
     "biopic": "images/me.jpg"
 }
@@ -21,17 +23,21 @@ var bio = {
 bio.display = function() {
 	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-	$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts[0].mobile));
-	$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts[0].email));
-	$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts[0].github));
-	$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts[0].location));
+    $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+	$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+    $("#footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+	$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+    $("#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+	$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 	$("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 	$("#header").append(HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage));
 	if(bio.skills.length > 0) {
-		$("#header").append(HTMLskillsStart);
-		$("#skills").append(HTMLskills.replace("%data%", bio.skills[0]));
-		$("#skills").append(HTMLskills.replace("%data%", bio.skills[1]));
-		$("#skills").append(HTMLskills.replace("%data%", bio.skills[2]));
+        $("#header").append(HTMLskillsStart);
+        for (skill in bio.skills) {
+            $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
+        }
+		
 	}
 }
 
@@ -40,7 +46,7 @@ var education = {
     "schools": [
         {
             "name": "Master's University",
-            "location": "Master's City",
+            "location": "Ithaca, NY",
             "degree": "Master's",
             "majors": [
                 "Electrical Engineering"
@@ -50,7 +56,7 @@ var education = {
         },
         {
             "name": "Bachelor's University",
-            "location": "Bachelor's City",
+            "location": "San Diego, CA",
             "degree": "Bachelor's",
             "majors": [
                 "Electrical Engineering"
@@ -84,7 +90,7 @@ var education = {
 education.display = function() {
 	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
-		$(".education-entry:last", "#education").append(HTMLschoolName.replace("%data%", education.schools[school].name) + HTMLschoolDegree.replace("%data%", education.schools[school].degree));
+		$(".education-entry:last", "#education").append((HTMLschoolName.replace("%data%", education.schools[school].name) + HTMLschoolDegree.replace("%data%", education.schools[school].degree)).replace("#", education.schools[school].url));
 		$(".education-entry:last", "#education").append(HTMLschoolDates.replace("%data%", education.schools[school].dates));
 		$(".education-entry:last", "#education").append(HTMLschoolLocation.replace("%data%", education.schools[school].location));
 		$(".education-entry:last", "#education").append(HTMLschoolMajor.replace("%data%", education.schools[school].majors.join(", ")));
@@ -92,9 +98,9 @@ education.display = function() {
 
 	$("#education").append(HTMLonlineClasses);
 	for (var onlineCourse in education.onlineCourses) {
-		$("#education").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school));
-		$("#education").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date));
-		$("#education").append(HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url));
+        $("#education").append(HTMLschoolStart);
+        $(".education-entry:last").append((HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school)).replace("#", education.onlineCourses[onlineCourse].url));
+		$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date));
 	}
 }
 
