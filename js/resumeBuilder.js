@@ -52,7 +52,7 @@ var education = {
                 "Electrical Engineering"
             ],
             "dates": 2009,
-            "url": "http://www.google.com"
+            "url": "http://www.cornell.edu"
         },
         {
             "name": "Bachelor's University",
@@ -62,7 +62,7 @@ var education = {
                 "Electrical Engineering"
             ],
             "dates": 2008,
-            "url": "http://www.google.com"
+            "url": "http://www.stanford.edu"
         }
     ],
     "onlineCourses": [
@@ -111,14 +111,16 @@ var work = {
             "title": "Senior Web Developer",
             "location": "Orange County, CA",
             "dates": "Mar 2012  - Present",
-            "description": "Quinquaginta septem est - pars tua, triginta quinque millia. Est autem extra plus quindecim, tota tua est, quom meruisset. Fac nos fecit. SIC. Puto quia una res potest - venimus in cognitionem. Vide pretium in manibus. Sed finge iustum faciens quod qualibet septimana. SIC. Duis duas libras triginta quinque milia pondo."
+            "description": "Quinquaginta septem est - pars tua, triginta quinque millia. Est autem extra plus quindecim, tota tua est, quom meruisset. Fac nos fecit. SIC. Puto quia una res potest - venimus in cognitionem. Vide pretium in manibus. Sed finge iustum faciens quod qualibet septimana. SIC. Duis duas libras triginta quinque milia pondo.",
+            "url" : "https://www.apple.com/"
         },
         {
             "employer": "Employer XYZ",
             "title": "Web Developer",
             "location": "Orange County, CA",
             "dates": "Aug 2009 - Feb 2012",
-            "description": "Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium."
+            "description": "Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium.",
+            "url" : "https://twitter.com/"
         }
     ]
 }
@@ -126,7 +128,7 @@ var work = {
 work.display = function() {
 	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
-		$(".work-entry:last", "#workExperience").append(HTMLworkEmployer.replace("%data%", work.jobs[job].employer) + HTMLworkTitle.replace("%data%", work.jobs[job].title));
+		$(".work-entry:last", "#workExperience").append((HTMLworkEmployer.replace("%data%", work.jobs[job].employer) + HTMLworkTitle.replace("%data%", work.jobs[job].title)).replace("#", work.jobs[job].url))
 		$(".work-entry:last", "#workExperience").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
 		$(".work-entry:last", "#workExperience").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
 		$(".work-entry:last", "#workExperience").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
@@ -143,7 +145,8 @@ var projects = {
             "images": [
                 "images/project1-img1.jpg",
                 "images/project1-img2.jpg"
-            ]
+            ],
+            "url" : "https://github.com/naier/frontend-nanodegree-resume"
         },
         {
             "title": "Project 2",
@@ -152,7 +155,8 @@ var projects = {
             "images": [
                 "images/project2-img1.jpg",
                 "images/project2-img2.jpg"
-            ]
+            ],
+            "url" : "https://github.com/naier/create-your-own-adventure"
         }
     ]
 }
@@ -160,7 +164,7 @@ var projects = {
 projects.display = function() {
 	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
-		$(".project-entry:last", "#projects").append(HTMLprojectTitle.replace("%data%", projects.projects[project].title));
+		$(".project-entry:last", "#projects").append(HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].url));
 		$(".project-entry:last", "#projects").append(HTMLprojectDates.replace("%data%", projects.projects[project].dates));
 		$(".project-entry:last", "#projects").append(HTMLprojectDescription.replace("%data%", projects.projects[project].description));
 		if(projects.projects[project].images.length > 0) {
