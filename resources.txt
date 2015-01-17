@@ -1,0 +1,28 @@
+I used the following resources while completing this project:
+
+Udacity courses:
+- Udacity Javascripts Basics course
+- Udacity Intro to Jquery course
+
+MDN Resources:
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+jQuery API Documentation:
+- http://api.jquery.com/
+- http://api.jquery.com/category/selectors/
+- http://api.jquery.com/category/events/
+
+Other articles:
+- http://opensourcehacker.com/2012/10/17/true-lies-and-falsy-values-in-python-and-javascript/
+- http://www.dev-archive.net/articles/js-dot-notation/
+- http://www.copterlabs.com/blog/json-what-it-is-how-it-works-how-to-use-it/
+- http://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/
+- http://helephant.com/2008/08/19/functions-are-first-class-objects-in-javascript/
+- http://en.wikipedia.org/wiki/Anonymous_function#JavaScript
+
+Tools, APIs, etc:
+- http://jsonlint.com/
+- https://developers.google.com/maps/documentation/javascript/tutorial
+- https://unsplash.com/
